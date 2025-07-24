@@ -1,0 +1,101 @@
+module Projeto2(
+    input clk,
+    input reset,
+    output [31:0] pc_out,
+    output [31:0] alu_out,
+    output [31:0] mem_out
+);
+    // Declaração de sinais intermediários
+    wire [31:0] next_pc, current_pc, instruction;
+    wire [31:0] read_data1, read_data2, write_data;
+    wire [31:0] alu_result, mem_read_data;
+    wire [31:0] sign_ext_imm, shifted_imm;
+    wire [4:0] write_reg;
+    wire [3:0] alu_control;
+    wire zero_flag;
+    
+    // Sinais de controle
+    wire reg_dst, branch, mem_read, mem_to_reg, mem_write, alu_src, reg_write, jump;
+    wire [1:0] alu_op;
+    
+    // Instanciação dos módulos
+    pc program_counter(
+        .clk(clk),
+        .reset(reset),
+        .next_pc(next_pc),
+        .current_pc(pc_out)
+    );
+    
+    imem instruction_memory(
+        .address(pc_out),
+        .instruction(instruction)
+    );
+    
+    regfile register_file(
+        .clk(clk),
+        .reset(reset),
+        .reg_write(reg_write),
+        .read_reg1(instruction[25:21]),
+        .read_reg2(instruction[20:16]),
+        .write_reg(write_reg),
+        .write_data(write_data),
+        .read_data1(read_data1),
+        .read_data2(read_data2)
+    );
+    
+    ula alu(
+        .a(read_data1),
+        .b(alu_src ? sign_ext_imm : read_data2),
+        .op(alu_control),
+        .result(alu_result),
+        .zero(zero_flag)
+    );
+    
+    dmem data_memory(
+        .clk(clk),
+        .mem_read(mem_read),
+        .mem_write(mem_write),
+        .address(alu_result),
+        .write_data(read_data2),
+        .read_data(mem_read_data)
+    );
+    
+    control_unit control(
+        .opcode(instruction[31:26]),
+        .reg_dst(reg_dst),
+        .branch(branch),
+        .mem_read(mem_read),
+        .mem_to_reg(mem_to_reg),
+        .alu_op(alu_op),
+        .mem_write(mem_write),
+        .alu_src(alu_src),
+        .reg_write(reg_write),
+        .jump(jump)
+    );
+    
+    ula_control alu_control_unit(
+        .alu_op(alu_op),
+        .funct(instruction[5:0]),
+        .alu_control(alu_control)
+    );
+    
+    sign_extend sign_extension(
+        .imm(instruction[15:0]),
+        .extended(sign_ext_imm)
+    );
+    
+    // Lógica para próximo PC
+    assign next_pc = jump ? {pc_out[31:28], instruction[25:0], 2'b00} :
+                     (branch & zero_flag) ? pc_out + 4 + (sign_ext_imm << 2) :
+                     pc_out + 4;
+    
+    // Seleção do registrador de escrita
+    assign write_reg = reg_dst ? instruction[15:11] : instruction[20:16];
+    
+    // Seleção do dado para escrita no banco de registradores
+    assign write_data = mem_to_reg ? mem_read_data : alu_result;
+    
+    // Saídas
+    assign alu_out = alu_result;
+    assign mem_out = mem_read_data;
+endmodule

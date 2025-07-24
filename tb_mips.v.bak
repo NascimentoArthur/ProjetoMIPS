@@ -1,0 +1,16 @@
+`timescale 1ns / 1ps
+module tb_mips();
+    reg clk, reset;
+    wire [31:0] pc_out, alu_out, mem_out;
+
+    Projeto2 uut (clk, reset, pc_out, alu_out, mem_out);
+
+    initial begin
+        clk = 0;
+        reset = 1;
+        #10 reset = 0;
+        #500 $finish;
+    end
+
+    always #5 clk = ~clk; // Gera clock de 100 MHz (período 10 ns)
+endmodule

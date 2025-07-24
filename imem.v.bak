@@ -1,0 +1,12 @@
+module imem(
+    input [31:0] address,
+    output [31:0] instruction
+);
+    reg [31:0] mem [0:63]; // Memória com 64 palavras
+    
+    initial begin
+        $readmemb("instructions.list", mem); // Carrega as instruções
+    end
+    
+    assign instruction = mem[address[9:2]]; // Ignora os 2 LSBs (word aligned)
+endmodule

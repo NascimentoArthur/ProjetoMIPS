@@ -1,0 +1,184 @@
+Info: Start Nativelink Simulation process
+
+========= EDA Simulation Settings =====================
+
+Sim Mode              :  Gate
+Family                :  cyclonev
+Quartus root          :  c:/intelfpga_lite/20.1/quartus/bin64/
+Quartus sim root      :  c:/intelfpga_lite/20.1/quartus/eda/sim_lib
+Simulation Tool       :  modelsim-altera
+Simulation Language   :  verilog
+Simulation Mode       :  GUI
+Sim Output File       :  Projeto2.vo
+Sim SDF file          :  Projeto2__verilog.sdo
+Sim dir               :  simulation\modelsim
+
+=======================================================
+
+Info: Starting NativeLink simulation with ModelSim-Altera software
+Sourced NativeLink script c:/intelfpga_lite/20.1/quartus/common/tcl/internal/nativelink/modelsim.tcl
+Warning: File Projeto2_run_msim_gate_verilog.do already exists - backing up current file as Projeto2_run_msim_gate_verilog.do.bak2
+Probing transcript
+ModelSim-Altera Info: # Reading pref.tcl
+ModelSim-Altera Info: # do Projeto2_run_msim_gate_verilog.do
+ModelSim-Altera Info: # if {[file exists gate_work]} {
+ModelSim-Altera Info: # 	vdel -lib gate_work -all
+ModelSim-Altera Info: # }
+ModelSim-Altera Info: # vlib gate_work
+ModelSim-Altera Info: # vmap work gate_work
+ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+ModelSim-Altera Info: # vmap work gate_work 
+ModelSim-Altera Info: # Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+ModelSim-Altera Info: # Modifying modelsim.ini
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vlog -vlog01compat -work work +incdir+. {Projeto2.vo}
+ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+ModelSim-Altera Info: # Start time: 19:26:20 on Jul 24,2025
+ModelSim-Altera Info: # vlog -reportprogress 300 -vlog01compat -work work "+incdir+." Projeto2.vo 
+ModelSim-Altera Info: # -- Compiling module Projeto2
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	Projeto2
+ModelSim-Altera Info: # End time: 19:26:21 on Jul 24,2025, Elapsed time: 0:00:01
+ModelSim-Altera Info: # Errors: 0, Warnings: 0
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: cd "D:/JENIFFER/UFRPE/5_PERIODO/Arquitetura de computadores/Projeto2"
+ModelSim-Altera Info: # reading modelsim.ini
+ModelSim-Altera Info: vlog *.v
+ModelSim-Altera Info: # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+ModelSim-Altera Info: # Start time: 19:26:40 on Jul 24,2025
+ModelSim-Altera Info: # vlog -reportprogress 300 control_unit.v dmem.v imem.v mips_top.v pc.v regfile.v sign_extend.v tb_mips.v ula.v ula_control.v 
+ModelSim-Altera Info: # -- Compiling module control_unit
+ModelSim-Altera Info: # -- Compiling module dmem
+ModelSim-Altera Info: # -- Compiling module imem
+ModelSim-Altera Info: # -- Compiling module Projeto2
+ModelSim-Altera Info: # -- Compiling module pc
+ModelSim-Altera Info: # -- Compiling module regfile
+ModelSim-Altera Info: # -- Compiling module sign_extend
+ModelSim-Altera Info: # -- Compiling module tb_mips
+ModelSim-Altera Info: # -- Compiling module ula
+ModelSim-Altera Info: # -- Compiling module ula_control
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	tb_mips
+ModelSim-Altera Info: # End time: 19:26:40 on Jul 24,2025, Elapsed time: 0:00:00
+ModelSim-Altera Info: # Errors: 0, Warnings: 0
+ModelSim-Altera Info: vsim work.tb_mips
+ModelSim-Altera Info: # vsim work.tb_mips 
+ModelSim-Altera Info: # Start time: 19:26:47 on Jul 24,2025
+ModelSim-Altera Info: # Loading work.tb_mips
+ModelSim-Altera Info: # Loading work.Projeto2
+ModelSim-Altera Info: # Loading work.pc
+ModelSim-Altera Info: # Loading work.imem
+ModelSim-Altera Info: # Loading work.regfile
+ModelSim-Altera Info: # Loading work.control_unit
+ModelSim-Altera Info: # Loading work.sign_extend
+ModelSim-Altera Info: # Loading work.ula_control
+ModelSim-Altera Info: # Loading work.ula
+ModelSim-Altera Info: # Loading work.dmem
+ModelSim-Altera Info: run -all
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # =====================================
+ModelSim-Altera Info: #    INICIANDO SIMULACAO DO MIPS   
+ModelSim-Altera Info: # =====================================
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # [REG WRITE] $ 1 = 000f0000
+ModelSim-Altera Info: # [REG WRITE] $ 1 = 000fa000
+ModelSim-Altera Info: # [REG WRITE] $25 = 000fa000
+ModelSim-Altera Info: # [REG WRITE] $25 = 000fa001
+ModelSim-Altera Info: # [REG WRITE] $16 = 00000014
+ModelSim-Altera Info: # [REG WRITE] $17 = 0000000f
+ModelSim-Altera Info: # [REG WRITE] $ 8 = 00000023
+ModelSim-Altera Info: # [REG WRITE] $ 9 = 00000005
+ModelSim-Altera Info: # [REG WRITE] $10 = 00000028
+ModelSim-Altera Info: # [REG WRITE] $11 = 00000004
+ModelSim-Altera Info: # [REG WRITE] $12 = 0000001f
+ModelSim-Altera Info: # [REG WRITE] $13 = 0000001b
+ModelSim-Altera Info: # [REG WRITE] $14 = ffffffe0
+ModelSim-Altera Info: # [REG WRITE] $25 = 000fa002
+ModelSim-Altera Info: # [REG WRITE] $16 = 00000005
+ModelSim-Altera Info: # [REG WRITE] $17 = 00000014
+ModelSim-Altera Info: # [REG WRITE] $16 = 00000014
+ModelSim-Altera Info: # [REG WRITE] $16 = 00000050
+ModelSim-Altera Info: # [REG WRITE] $25 = 000fa003
+ModelSim-Altera Info: # [REG WRITE] $16 = 00000005
+ModelSim-Altera Info: # [REG WRITE] $17 = 00000050
+ModelSim-Altera Info: # [REG WRITE] $ 8 = 00000002
+ModelSim-Altera Info: # [REG WRITE] $16 = 00000014
+ModelSim-Altera Info: # [REG WRITE] $16 = 00000050
+ModelSim-Altera Info: # [REG WRITE] $25 = 000fa004
+ModelSim-Altera Info: # [REG WRITE] $16 = fffffffe
+ModelSim-Altera Info: # [REG WRITE] $17 = fffffff8
+ModelSim-Altera Info: # [REG WRITE] $17 = fffffffc
+ModelSim-Altera Info: # [REG WRITE] $ 8 = 00000000
+ModelSim-Altera Info: # [REG WRITE] $17 = fffffffe
+ModelSim-Altera Info: # [REG WRITE] $ 8 = 00000000
+ModelSim-Altera Info: # [REG WRITE] $17 = ffffffff
+ModelSim-Altera Info: # [REG WRITE] $ 8 = 00000001
+ModelSim-Altera Info: # [REG WRITE] $25 = 000fa005
+ModelSim-Altera Info: # [REG WRITE] $22 = 0000000c
+ModelSim-Altera Info: # [REG WRITE] $23 = 00000028
+ModelSim-Altera Info: # [REG WRITE] $16 = 0000000a
+ModelSim-Altera Info: # [REG WRITE] $17 = 00000014
+ModelSim-Altera Info: # [REG WRITE] $18 = 0000001e
+ModelSim-Altera Info: # [REG WRITE] $19 = 00000028
+ModelSim-Altera Info: # [MEM WRITE] @0000000c = 0000000a
+ModelSim-Altera Info: # [MEM WRITE] @00000010 = 00000014
+ModelSim-Altera Info: # [MEM WRITE] @00000030 = 0000001e
+ModelSim-Altera Info: # [MEM WRITE] @00000034 = 00000028
+ModelSim-Altera Info: # [REG WRITE] $ 8 = 0000000a
+ModelSim-Altera Info: # [REG WRITE] $ 9 = 00000014
+ModelSim-Altera Info: # [REG WRITE] $11 = 0000001e
+ModelSim-Altera Info: # [REG WRITE] $ 8 = 0000001e
+ModelSim-Altera Info: # [REG WRITE] $ 9 = 00000028
+ModelSim-Altera Info: # [REG WRITE] $12 = 00000046
+ModelSim-Altera Info: # [REG WRITE] $ 8 = 00000064
+ModelSim-Altera Info: # [REG WRITE] $25 = 000fa006
+ModelSim-Altera Info: # [REG WRITE] $ 8 = 00000001
+ModelSim-Altera Info: # [REG WRITE] $25 = 000fa007
+ModelSim-Altera Info: # [REG WRITE] $31 = 000000e4
+ModelSim-Altera Info: # [REG WRITE] $ 8 = 000000e4
+ModelSim-Altera Info: # [REG WRITE] $ 8 = ffffffff
+ModelSim-Altera Info: # [REG WRITE] $ 8 = fffffffe
+ModelSim-Altera Info: # [REG WRITE] $ 8 = fffffffd
+ModelSim-Altera Info: # [REG WRITE] $ 8 = fffffffc
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # [INFO] Fim do programa de teste alcancado (PC=00000100).
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # =====================================
+ModelSim-Altera Info: #       RESULTADOS FINAIS      
+ModelSim-Altera Info: # =====================================
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # PC final: 00000100
+ModelSim-Altera Info: # Ultimo resultado da ULA: xxxxxxxx
+ModelSim-Altera Info: # Ultimo dado lido da memoria: zzzzzzzz
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # ESTADO FINAL DOS REGISTRADORES (nao-zero):
+ModelSim-Altera Info: #   R1 ($ ??): 000fa000
+ModelSim-Altera Info: #   R8 ($ t0): fffffffc
+ModelSim-Altera Info: #   R9 ($ t1): 00000028
+ModelSim-Altera Info: #   R10 ($ t2): 00000028
+ModelSim-Altera Info: #   R11 ($ t3): 0000001e
+ModelSim-Altera Info: #   R12 ($ t4): 00000046
+ModelSim-Altera Info: #   R13 ($ t5): 0000001b
+ModelSim-Altera Info: #   R14 ($ t6): ffffffe0
+ModelSim-Altera Info: #   R16 ($ s0): 0000000a
+ModelSim-Altera Info: #   R17 ($ s1): 00000014
+ModelSim-Altera Info: #   R18 ($ s2): 0000001e
+ModelSim-Altera Info: #   R19 ($ s3): 00000028
+ModelSim-Altera Info: #   R22 ($ s6): 0000000c
+ModelSim-Altera Info: #   R23 ($ s7): 00000028
+ModelSim-Altera Info: #   R25 ($ t9): 000fa007
+ModelSim-Altera Info: #   R31 ($ ra): 000000e4
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # =====================================
+ModelSim-Altera Info: #       SIMULACAO FINALIZADA     
+ModelSim-Altera Info: # =====================================
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # ** Note: $finish    : tb_mips.v(117)
+ModelSim-Altera Info: #    Time: 725 ns  Iteration: 1  Instance: /tb_mips
+ModelSim-Altera Info: # 1
+ModelSim-Altera Info: # Break in Task stop_simulation at tb_mips.v line 117
+ModelSim-Altera Info: # End time: 19:27:20 on Jul 24,2025, Elapsed time: 0:00:33
+ModelSim-Altera Info: # Errors: 0, Warnings: 0
+Info: NativeLink simulation flow was successful
